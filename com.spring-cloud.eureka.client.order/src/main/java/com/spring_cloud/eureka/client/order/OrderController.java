@@ -11,8 +11,8 @@ public class OrderController {
 
     private final OrderService orderService;
 
-    @GetMapping("/order")
-    public String getOrder() {
-        return "Order detail";
+    @GetMapping("/order/{orderId}")
+    public String getOrder(@PathVariable String orderId) {
+        return "Order detail" + orderService.getOrder(orderId);
     }
 }

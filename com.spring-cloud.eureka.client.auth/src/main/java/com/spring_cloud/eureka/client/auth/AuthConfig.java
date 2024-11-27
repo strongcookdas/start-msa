@@ -20,7 +20,9 @@ public class AuthConfig {
 
                 // 요청에 대한 접근 권한 설정
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/auth/sign-up").permitAll())
+                        .requestMatchers("/auth/sign-up").permitAll()
+                        .requestMatchers("/auth/sign-in").permitAll()
+                )
 
                 // 세션을 사용하지 x
                 .sessionManagement(session -> session
